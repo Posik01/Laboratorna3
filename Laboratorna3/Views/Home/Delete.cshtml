@@ -1,0 +1,41 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Laboratorna3.Models.Protocol
+<h2>Deleting protocol</h2>
+<dl>
+    <dt>Address</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Address)
+    </dd>
+    <dt>OffenderData</dt>
+    <dd>
+        @Html.DisplayFor(model => model.OffenderData)
+    </dd>
+    <dt>Situation</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Situation)
+    </dd>
+    <dt>OfficerData</dt>
+    <dd>
+        @Html.DisplayFor(model => model.OfficerData)
+    </dd>
+    <dt>Witnesses</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Witnesses)
+    </dd>
+    <dt>Date</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Date)
+    </dd>
+    <dt>Time</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Time)
+    </dd>
+</dl>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}
+
+

@@ -1,0 +1,36 @@
+﻿@using Laboratorna3.Models
+@model IEnumerable<Protocol>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Protocols</h3>
+    <p><a href="/Home/Create">Create protocol</a></p>
+    <table>
+        <tr class="header">
+            <td><p>Id</p></td>
+            <td><p>Address</p></td>
+            <td><p>OffenderData</p></td>
+            <td><p>Situation</p></td>
+            <td><p>OfficerData</p></td>
+            <td><p>Witnesses</p></td>
+            <td><p>Date</p></td>
+            <td><p>Time</p></td>
+        </tr>
+        @foreach (Protocol b in Model)
+        {
+    <tr>
+        <td><p>@b.Id</p></td>
+        <td><p>@b.Address</p></td>
+        <td><p>@b.OffenderData</p></td>
+        <td><p>@b.Situation</p></td>
+        <td><p>@b.OfficerData</p></td>
+        <td><p>@b.Witnesses</p></td>
+        <td><p>@b.Date</p></td>
+        <td><p>@b.Time</p></td>
+        <td><p><a href="/Home/EditProtocol/@b.Id">Редагувати</a></p></td>
+        <td><p><a href="/Home/Delete/@b.Id">Видалити</a></p></td>
+    </tr>
+        }
+    </table>
+</div>

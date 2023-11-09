@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Edit protocol";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Laboratorna3.Models.Protocol
+<h2>Protocol № @Model.Id</h2>
+@using (Html.BeginForm("EditProtocol", "Home", FormMethod.Post))
+{
+<fieldset>
+    @Html.HiddenFor(m => m.Id)
+    <p>
+        @Html.LabelFor(m => m.Address, "Address")
+        <br />
+        @Html.EditorFor(m => m.Address)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.OffenderData, "OffenderData(last name, first name, patronymic, address, driver's license number, etc.)")
+        <br />
+        @Html.EditorFor(m => m.OffenderData)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Situation, "Situation")
+        <br />
+        @Html.EditorFor(m => m.Situation)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.OfficerData, "OfficerData(surname, first name, patronymic, position, badge number)")
+        <br />
+        @Html.EditorFor(m => m.OfficerData)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Witnesses, "Witnesses(if there is)")
+        <br />
+        @Html.EditorFor(m => m.Witnesses)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Date, "Date")
+        <br />
+        @Html.EditorFor(m => m.Date)
+    </p>
+
+    <p>
+        @Html.LabelFor(m => m.Time, "Time")
+        <br />
+        @Html.EditorFor(m => m.Time)
+    </p>
+    <p><input type="submit" value="Send" /></p>
+</fieldset>
+}
+
+
